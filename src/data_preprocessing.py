@@ -40,6 +40,7 @@ def normalize_data(data : str):
     
 
 #-------------------------------------- module testing code -----------------------------------------------------#
-
-tokens = normalize_data('I @really@ really really really really really!!! like youu do you want me? "Hell yeah"')
+"""
+tokens = normalize_data('test! string@gmail.com blah!!')
 print(tokens)
+"""
