@@ -10,7 +10,7 @@ from data_preprocessing import normalize_data
 
 def generate_index(folder_path : str):
     
-    N = 56          # number of documents
+    N = 0           # number of documents
     idf_dict = {}   # dictionary for storing precomputed idf values
     index = {}      # index for storing (doc_id,term_frequency) key value pairs
     folder : str = Path(folder_path)
@@ -38,8 +38,12 @@ def generate_index(folder_path : str):
                 else:
                     index[token][doc_id] = 1
     
+    print('Number of documents found: ',N)
+
     for key in index.keys():
-        idf_dict[key] = log(len(index[key]),10)/N
+
+        # assuming there was a typo in the assignment for idf formula (using standard formula)
+        idf_dict[key] = log(N/len(index[key]),10)
         
     # check for the existence of the index folder
     # create if does not exist
